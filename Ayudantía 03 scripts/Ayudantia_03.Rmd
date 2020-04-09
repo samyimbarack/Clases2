@@ -20,7 +20,9 @@ Para los ejercicios a continuación es necesario que tengan descargados los sigu
 
 ```{r cargando paquetes, echo = FALSE}
 library(data.table)    ## Este debiese de tenerlo instalado desde la ayudantía 01
-library(ggplot2)       ## Este debiese de tenerlo instalado desde la clase 02
+library(ggplot2)  ## Este debiese de tenerlo instalado desde la clase 
+install.packages("highcharter")
+install.packages("scales")
 library(highcharter)
 library(scales)
 ```
@@ -156,7 +158,7 @@ ggplot(data = var_sexo, aes(x = fecha, y = sexo_absoluto, group = sexo, color = 
   geom_text(aes(label = sexo_absoluto), color = "black", nudge_y = 2500, size = 3) + 
   scale_y_continuous(labels = number_format(scale = 0.001, suffix = "K", big.mark = ".", decimal.mark = ",")) + 
   scale_x_date(date_labels = "%Y-%b", breaks = unique(var_sexo$fecha)[c(seq(1,12,2))]) +
-  labs(x = "Categoría Ocupacional", y = "Variación de Personas", fill = NULL)
+  labs(x = "Categoría Ocupacional", y = "Variación de Personas", color = NULL)
 ```
 
 Como dato extra, se puede indicar que las capacidades de edición del gráfico de ggplot2 son bastantes detalladas. Por ejemplo, se pueden agregar temas para estilizar el diseño final del gráfico. Volviendo al primer gráfico de barras, supongamos que deseamos hacer una presentación formal sobre los resultados. Un poco más de trabajo y pueden llegar a tener gráficos muy decentes:
