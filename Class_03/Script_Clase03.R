@@ -119,7 +119,7 @@ ggplotly(p1)
 
 
 #---- Part 3: Intro to Mapping  -------------------
-#install.packages("chilemapas")
+install.packages("sf")
 library(chilemapas)
 library(data.table)
 library(ggplot2)
