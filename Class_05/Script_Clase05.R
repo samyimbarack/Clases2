@@ -2,7 +2,6 @@
 # EDSA - Exploratory Spatial Data Analysis
 # Basado en Datos COVID19 CHILE
 # Fuente: https://github.com/MinCiencia/Datos-COVID19 
-
 #install.packages('sf')
 library(data.table)
 library(ggplot2)
@@ -27,6 +26,7 @@ comunas_rm<-mapa_comunas[mapa_comunas$codigo_region==13,]
 
 comunas_rm<-merge(comunas_rm,covid,by.x="codigo_comuna",by.y="Codigo comuna",all.x=TRUE,sort=F)
 
+comunas_rm<-st_sf(comunas_rm)
 
 # Choropleth plot (continuos scale)
 
