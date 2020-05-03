@@ -41,6 +41,7 @@ library(ggplot2)
 comunas_rm<-mapa_comunas[mapa_comunas$codigo_region==13,]
 
 comunas_rm<-merge(x = comunas_rm,y = COVID[`Codigo region`==13,],by.x="codigo_comuna",by.y="Codigo comuna",all.x=TRUE,sort=F)
+comunas_rm<- st_sf(comunas_rm)
 
 comunas_rm<-as_Spatial(comunas_rm)
 
